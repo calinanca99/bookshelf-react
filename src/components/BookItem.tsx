@@ -11,6 +11,7 @@ export function BookItem(props: BookItemProps) {
 
 	return (
 		<div
+			className="details"
 			style={{
 				border: "1px solid #ddd",
 				borderRadius: "8px",
@@ -22,21 +23,9 @@ export function BookItem(props: BookItemProps) {
 				boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
 			}}
 		>
-			{!!props.image_url && (
-				<img
-					src={props.image_url}
-					alt={props.title}
-					style={{
-						width: "120px",
-						height: "160px",
-						objectFit: "cover",
-						borderRadius: "4px",
-						flexShrink: 0,
-					}}
-				/>
-			)}
 			<div style={{ flex: 1 }}>
 				<h3
+					className="title"
 					style={{
 						margin: "0 0 12px 0",
 						fontSize: "20px",
@@ -67,6 +56,7 @@ export function BookItem(props: BookItemProps) {
 
 						{showDescription && (
 							<p
+								className="description"
 								style={{
 									margin: "0",
 									color: "#666",
@@ -82,6 +72,7 @@ export function BookItem(props: BookItemProps) {
 
 				{!props.description && (
 					<p
+						className="placeholderDescription"
 						style={{
 							margin: "0",
 							color: "#999",
@@ -89,7 +80,7 @@ export function BookItem(props: BookItemProps) {
 							fontSize: "14px",
 						}}
 					>
-						No description available
+						No description available.
 					</p>
 				)}
 			</div>

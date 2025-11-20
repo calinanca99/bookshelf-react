@@ -1,41 +1,40 @@
 import { useState } from "react";
 import { BookItem, type BookItemProps } from "./BookItem";
 
-type Book = BookItemProps & {
+type BookData = BookItemProps & {
 	id: number;
 };
 
 const BookList = () => {
-	const [books, setBooks] = useState<Book[]>([
+	const [books, setBooks] = useState<BookData[]>([
 		{
 			id: 1,
-			title: "The Great Gatsby",
+			title: "Eloquent JavaScript",
 			description:
-				"A classic American novel set in the Jazz Age, exploring themes of wealth, love, and the American Dream through the eyes of narrator Nick Carraway.",
+				"This is a book about JavaScript, programming, and the wonders of the digital.",
 		},
 		{
 			id: 2,
-			title: "To Kill a Mockingbird",
+			title: "Total TypeScript",
 			description:
-				"A powerful story of racial injustice and childhood innocence in the American South during the 1930s.",
+				"become a TypeScript wizard and build a TypeScript application from scratch.",
 		},
 		{
 			id: 3,
-			title: "1984",
+			title: "Dive Into Systems",
 			description:
-				"George Orwell's dystopian masterpiece about totalitarianism, surveillance, and the manipulation of truth in a future society.",
+				"Dive Into Systems is a vivid introduction to computer organization, architecture, and operating systems that is already being used as a classroom textbook at more than 25 universities.",
 		},
 		{
 			id: 4,
-			title: "Mystery Book",
+			title: "Designing Data-Intensive Applications",
 		},
 	]);
 
 	const addNewBook = () => {
-		const newBook: Book = {
+		const newBook: BookData = {
 			id: books.length + 1,
 			title: `New Book ${books.length + 1}`,
-			description: "This is a newly added book.",
 		};
 
 		setBooks([...books, newBook]);
@@ -43,13 +42,15 @@ const BookList = () => {
 
 	return (
 		<div
+			className="container"
 			style={{
-				maxWidth: "800px",
+				maxWidth: "1200px",
 				margin: "0 auto",
 				padding: "20px",
 			}}
 		>
 			<div
+				className="header"
 				style={{
 					display: "flex",
 					justifyContent: "space-between",
@@ -64,7 +65,7 @@ const BookList = () => {
 						fontSize: "28px",
 					}}
 				>
-					Books Collection
+					Programming books
 				</h1>
 
 				<button
