@@ -10,7 +10,7 @@ const BookList = () => {
 				<h1>Programming books</h1>
 
 				<button onClick={addBook} type="button">
-					+ Add New Book
+					+ Add new book
 				</button>
 			</header>
 

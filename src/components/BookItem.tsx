@@ -37,7 +37,7 @@ export function BookItem(props: BookItemProps) {
 							type="button"
 							onClick={() => setShowDescription(!showDescription)}
 						>
-							{showDescription ? "Hide Description" : "Show Description"}
+							{showDescription ? "Hide description" : "Show description"}
 						</button>
 
 						{showDescription && (
