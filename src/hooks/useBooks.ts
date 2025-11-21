@@ -27,6 +27,7 @@ const initialBooks: Book[] = [
 	{
 		id: 4,
 		title: "Designing Data-Intensive Applications",
+		imageUrl: "https://brokenurlisverybroken.wow",
 	},
 ];
 

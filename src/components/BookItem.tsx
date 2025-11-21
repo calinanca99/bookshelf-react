@@ -6,8 +6,12 @@ export type BookItemProps = {
 	imageUrl?: string | undefined;
 };
 
+const PLACEHOLDER_IMAGE_URL =
+	"https://kagi.com/proxy/images?c=_m3km2RjA3G0qleowsZXHZb9NEn0fSsEYIHbKzMDyAFb4nUPIanknmQV_g0rmdCIPtxJEJaaE88a4q7dCGxCQBT3N7ASd8GMDxF58mhBbOgD6OxSMFK3_Bb34vY3Qcttk2YAWaVM43QM8ZMYbSBu6A%3D%3D";
+
 export function BookItem(props: BookItemProps) {
 	const [showDescription, setShowDescription] = useState(true);
+	const [imageError, setImageError] = useState(false);
 
 	const getImageUrl = () => {
 		if (props.imageUrl && props.imageUrl.trim() !== "") {
@@ -17,7 +21,7 @@ export function BookItem(props: BookItemProps) {
 			};
 		}
 		return {
-			url: "https://kagi.com/proxy/images?c=_m3km2RjA3G0qleowsZXHZb9NEn0fSsEYIHbKzMDyAFb4nUPIanknmQV_g0rmdCIPtxJEJaaE88a4q7dCGxCQBT3N7ASd8GMDxF58mhBbOgD6OxSMFK3_Bb34vY3Qcttk2YAWaVM43QM8ZMYbSBu6A%3D%3D",
+			url: PLACEHOLDER_IMAGE_URL,
 			description: "Icon of a book with orange cover",
 		};
 	};
@@ -49,11 +53,16 @@ export function BookItem(props: BookItemProps) {
 				)}
 			</div>
 			<div className="book-image">
-				<img
-					src={getImageUrl().url}
-					alt={getImageUrl().description}
-					className="book-image-element"
-				/>
+				{getImageUrl().url && !imageError ? (
+					<img
+						src={getImageUrl().url}
+						alt={getImageUrl().description}
+						className="book-image-element"
+						onError={() => setImageError(true)}
+					/>
+				) : (
+					<p className="book-image-placeholder">No image available.</p>
+				)}
 			</div>
 		</div>
 	);

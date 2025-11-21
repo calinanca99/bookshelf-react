@@ -89,3 +89,11 @@
 	width: 100%;
 	height: auto;
 }
+
+.book-image-placeholder {
+	color: #999;
+	font-style: italic;
+	font-size: 14px;
+	text-align: center;
+	padding: 8px;
+}
