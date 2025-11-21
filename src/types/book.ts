@@ -1,5 +1,6 @@
-import type { BookItemProps } from "../components/BookItem";
-
-export type Book = BookItemProps & {
+export type Book = {
 	id: number;
+	title: string;
+	description?: string | undefined;
+	imageUrl?: string | undefined;
 };

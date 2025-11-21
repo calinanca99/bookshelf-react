@@ -35,6 +35,17 @@ export function BookItem(props: BookItemProps) {
 					</p>
 				)}
 			</div>
+			<div className="book-image">
+				{props.imageUrl && props.imageUrl.trim() !== "" ? (
+					<img
+						src={props.imageUrl}
+						alt={`Cover of the book "${props.title}"`}
+						className="book-image-element"
+					/>
+				) : (
+					<p className="book-image-placeholder">No image available.</p>
+				)}
+			</div>
 		</div>
 	);
 }

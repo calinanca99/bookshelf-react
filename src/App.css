@@ -25,7 +25,6 @@
 		cursor: pointer;
 		font-size: 16px;
 		font-weight: bold;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	}
 }
 
@@ -37,7 +36,6 @@
 	display: flex;
 	gap: 16px;
 	background-color: #fff;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .book-details {
@@ -73,4 +71,29 @@
 	color: #999;
 	font-style: italic;
 	font-size: 14px;
+}
+
+.book-image {
+	width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fafafa;
+	border-radius: 6px;
+	border: 1px solid #eee;
+	overflow: hidden;
+	padding: 8px;
+}
+
+.book-image-element {
+	width: 100%;
+	height: auto;
+}
+
+.book-image-placeholder {
+	color: #999;
+	font-style: italic;
+	font-size: 14px;
+	text-align: center;
+	padding: 8px;
 }
