@@ -2,9 +2,9 @@
 
 ## Try the app
 
-1.`npm install`
-2. `npm run dev`
-3. Visit http://localhost:5173
+1. `npm install`
+1. `npm run dev`
+1. Visit http://localhost:5173
 
 ## Run the tests
 
