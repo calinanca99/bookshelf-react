@@ -9,6 +9,19 @@ export type BookItemProps = {
 export function BookItem(props: BookItemProps) {
 	const [showDescription, setShowDescription] = useState(true);
 
+	const getImageUrl = () => {
+		if (props.imageUrl && props.imageUrl.trim() !== "") {
+			return {
+				url: props.imageUrl,
+				description: `Cover of the book "${props.title}"`,
+			};
+		}
+		return {
+			url: "https://kagi.com/proxy/images?c=_m3km2RjA3G0qleowsZXHZb9NEn0fSsEYIHbKzMDyAFb4nUPIanknmQV_g0rmdCIPtxJEJaaE88a4q7dCGxCQBT3N7ASd8GMDxF58mhBbOgD6OxSMFK3_Bb34vY3Qcttk2YAWaVM43QM8ZMYbSBu6A%3D%3D",
+			description: "Icon of a book with orange cover",
+		};
+	};
+
 	return (
 		<div className="book-container">
 			<div className="book-details">
@@ -36,15 +49,11 @@ export function BookItem(props: BookItemProps) {
 				)}
 			</div>
 			<div className="book-image">
-				{props.imageUrl && props.imageUrl.trim() !== "" ? (
-					<img
-						src={props.imageUrl}
-						alt={`Cover of the book "${props.title}"`}
-						className="book-image-element"
-					/>
-				) : (
-					<p className="book-image-placeholder">No image available.</p>
-				)}
+				<img
+					src={getImageUrl().url}
+					alt={getImageUrl().description}
+					className="book-image-element"
+				/>
 			</div>
 		</div>
 	);
